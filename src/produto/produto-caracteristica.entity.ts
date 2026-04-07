@@ -7,6 +7,6 @@ export class ProdutoCaracteristica {
   nome: string;
   @Column({ name: 'descricao', length: 100, nullable: false })
   descricao: string;
-  @ManyToOne(()=> ProdutoEntity, (produto)=> produto.caracteristica)
+  @ManyToOne(()=> ProdutoEntity, (produto=> produto.caracteristica))
   produto: ProdutoEntity;
 }

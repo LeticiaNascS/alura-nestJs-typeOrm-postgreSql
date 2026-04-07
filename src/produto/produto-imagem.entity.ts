@@ -1,4 +1,5 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, ManyToOne } from 'typeorm';
+import { ProdutoEntity } from './produto.entity';
 
 @Entity({ name: 'produto_imagens' })
 export class ProdutoImagem {
@@ -6,4 +7,6 @@ export class ProdutoImagem {
   url: string;
   @Column({ name: 'descricao', length: 100, nullable: false })
   descricao: string;
+  @ManyToOne(() => ProdutoEntity, (produto) => produto.caracteristica)
+  produto: ProdutoEntity;
 }

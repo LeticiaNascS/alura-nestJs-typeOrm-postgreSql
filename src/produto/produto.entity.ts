@@ -28,7 +28,7 @@ export class ProdutoEntity {
   categoria: string;
   @OneToMany(()=> ProdutoCaracteristica, ProdutoCaracteristica=> ProdutoCaracteristica.produto)
   caracteristica: ProdutoCaracteristica[];
-  @OneToMany(()=> ProdutoImagem, Produtoimagem=> Produtoimagem.imagem)
+  @OneToMany(()=> ProdutoImagem, Produtoimagem=> Produtoimagem.produto)
   imagem: ProdutoImagem[];
   @CreateDateColumn({ name: 'created_at' })
   createdAt: string;
